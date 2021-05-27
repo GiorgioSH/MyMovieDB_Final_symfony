@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}MYMOVIESDB{% endblock %}</title>
+        <link rel="stylesheet" href="/assets/css/cv.bootstrap.min.css" />
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/actors">films by actor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/genres">films by genre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/studios">films by studio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Registration</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                </div>
+            </div>
+        </nav>
+
+        </header
+        <div class="container">
+        {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>
+
+

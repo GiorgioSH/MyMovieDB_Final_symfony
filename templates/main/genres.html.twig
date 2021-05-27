@@ -1,0 +1,22 @@
+{% extends "./base.html.twig"%}
+{% block title %} Genres {% endblock %}
+
+{% block body %} 
+
+    <h1> Films par genres </h2>
+{% if genres is defined %}
+    <div class="col-3">
+        <ul class="list-group">
+            {% for genre in genres %}   
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/genres/{{ genre.name }}">
+                    {{ genre.name }}
+                
+                </a>
+            <span class="badge bg-primary rounded-pill">{{ genre.movies | length }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+{% endblock %}

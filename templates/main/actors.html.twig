@@ -1,0 +1,23 @@
+{% extends "./base.html.twig"%}
+{% block title %} Acteurs {% endblock %}
+
+{% block body %} 
+
+    <h1> Films par acteurs </h2>
+{% if actors is defined %}
+    <div class="col-3">
+        <ul class="list-group">
+            {% for actor in actors %}   
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/actors/{{ actor.firstName }}">
+                    {{ actor.firstName }}
+                    
+                </a>
+                <img src= "/assets/upload/images{{ actor.image }}"/>
+            <span class="badge bg-primary rounded-pill">{{ actor.movies | length }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+{% endblock %}  
