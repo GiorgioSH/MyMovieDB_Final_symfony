@@ -10,6 +10,6 @@ Usage of differents components/bundles that you can find in composer.json
 
 You can find all the extra ressources on the "About" page
 
-Usage of bootswatch 
+Usage of bootswatch and twig for the templating
 
 Enjoy
