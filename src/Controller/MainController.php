@@ -125,4 +125,19 @@ class MainController extends AbstractController
         return $this->render("main/about.html.twig");
 
     }
+     /**
+     * @Route("/vu", name="vu")
+     */
+    public function vu(MovieRepository $repoMovie): Response
+    {
+        // if(!$movie)
+        //     return $this->redirectToRoute('index');
+
+        $movies = $this->repoMovie->findBy(array('seen'=>'false'));
+
+        return $this->render("main/vu.html.twig", [
+            // 'movies' => $movie->getMovies(),
+            'movies'=>$movies,
+        ]);
+    }
 }
