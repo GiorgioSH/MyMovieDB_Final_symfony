@@ -1,0 +1,42 @@
+{% extends "base.html.twig"%}
+
+{% block title %} Déjà Vu {% endblock %}
+
+{% block body %} 
+
+<div class="row" id="dejavu">
+    <div class="az" style="display:flex; flex-wrap:wrap;  justify-content: center;">
+        {% for movie in movies %}
+            <div class="card col" style="width:18rem; flex: auto 0 0">
+                <div class="card-body"  style="justify-content: center;">
+                    <h5 class="card-title">
+                        {{ movie.name }}
+                    </h5>
+                    {% if movie.image starts with 'http' %}
+                        <img style="max-width: 100%" src="{{ movie.image}}" alt={{movie.name}} />
+                    {% else %}
+                        <img style="max-width:100%; min-height:49%; max-height:49%;" 
+                            src="/assets/upload/images/{{ movie.image }}" alt={{movie.name}} />
+                    {% endif %}
+                    <button type="button" class="btn btn-info" onclick="clickvu()" data-id={{ movie.id }}>Définir comme pas vu</button>
+                    <p class="card-text" style="max-height:50px; 
+                                                height:250px;
+                                                padding: 0px;
+                                                margin: 0px;
+                                                white-space:nowrap;
+                                                overflow:hidden;
+                                                text-overflow:ellipsis;">
+                    {{ movie.synopsis | raw }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>  
+</div>
+{# <script type="text/JavaScript">
+function clickvu(){
+    
+}
+</script> #}
+
+{% endblock %}
